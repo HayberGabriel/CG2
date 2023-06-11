@@ -13,7 +13,7 @@ while true
                 case 1
                     base = input("Digite a base do cubo: ");
                     origem = input("Digite as coordenadas do cubo: ");
-                    % print(origem)
+                    % print(origem);
                     if length(origem) == 3
                         origem = [origem 1]; % expande para coordenadas homogêneas
                     end
