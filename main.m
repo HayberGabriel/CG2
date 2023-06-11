@@ -2,12 +2,12 @@ world = World(); % Instancia um espaço
 
 while true
     clc
-    printf("1 - Desenhar poligono\n2 - Transformar poligono\n3 - Transformar câmera\n4 - Projeção em perspectiva\n5 - Plotar mundo\n6 - Teste câmera angular\n7 - Resetar espaço\n8 - Sair\n")
+    printf("1 - Desenhar poligono\n2 - Transformar poligono\n3 - Transformar câmera\n4 - Projeção em perspectiva\n5 - Plotar mundo\n6 - Resetar espaço\n7 - Sair\n")
     x = input("Selecione uma opção: ");
     switch x
         case 1
             clc
-            printf("1 - Desenhar cubo\n2 - Desenhar paralelepipedo\n3 - Desenhar pirâmide\n4 - Desenhar tronco\n5 - Desenhar cilindro\n6 - Voltar")
+            printf("1 - Desenhar cubo\n2 - Desenhar cilindro\n3 - Desenhar cone\n4 - Desenhar tronco\n5 - Desenhar cilindro\n6 - Voltar")
             y = input("\nSelecione uma opção: ");
             switch y
                 case 1
@@ -109,14 +109,14 @@ while true
             world.plota_mundo_proj(2);
         case 5
             world.plota_mundo(10); % Plota o mundo sem alterar a câmera padrão
+        %case 6
+            %dist = input("Digite a distância da camera à origem: ");
+            %elv = input("Digite o ângulo de elevação da câmera: ");
+            %hor = input("Digite o ângulo de horizontalidade da câmera: ");
+            %world.camera_view(dist, [elv hor], 'angular'); % Gera a câmera em uma esfera trigonométrica em torno da origem do mundo
+            %world.proj_mundo(90, 1);
+            %world.plota_mundo_proj(2);
         case 6
-            dist = input("Digite a distância da camera à origem: ");
-            elv = input("Digite o ângulo de elevação da câmera: ");
-            hor = input("Digite o ângulo de horizontalidade da câmera: ");
-            world.camera_view(dist, [elv hor], 'angular'); % Gera a câmera em uma esfera trigonométrica em torno da origem do mundo
-            world.proj_mundo(90, 1);
-            world.plota_mundo_proj(2);
-        case 7
             world.reset();
             input("Mundo resetado!");
         otherwise
